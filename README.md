@@ -53,11 +53,12 @@ docker-compose.yml의 경로로 이동한뒤에  `docker compose`로 MySQL 컨�
 $ docker compose up
 ```
 컨테이너가 준비됐다면 스프링 애플리케이션을 빌드 후 실행합니다.
-> Swagger 및 DB-adminer를 통한 직접 확인
 
-## DB-adminer
+## Swagger 및 DB-adminer를 통한 직접 확인
+
+# DB-adminer
 http://localhost:18080/triple?server=database-mysql&username=lmc&db=triple
 
-## Swagger
+# Swagger
 http://localhost:8080/swagger-ui/index.html#/
 
