@@ -31,6 +31,16 @@ POST /events
   - 테스트 케이스를 작성하면 좋음
   - 어플리케이션 실행 방법을 README 파일에 명세
 
+## 주요 사용 프레임워크 / 라이브러리 및 버전
+
+- Spring Boot 2.7.6
+    - Querydsl JPA 5.0.0
+    - Swagger 3(API 문서화)
+- Java 8
+- Gradle 7.4.1
+- MySQL (8.0.29) (InnoDB)
+- Docker & docker compose (MySQL 컨테이너 실행)
+
 ## ERD 
 
 요구사항을 바탕으로 ERD 작성(draw.io 사용)
@@ -38,7 +48,11 @@ POST /events
 
 ## 실행방법 및 실행 확인
 
-
+docker-compose.yml의 경로로 이동한뒤에  `docker compose`로 MySQL 컨테이너를 실행합니다. 
+```bash
+$ docker compose up
+```
+컨테이너가 준비됐다면 스프링 애플리케이션을 빌드 후 실행합니다.
 > Swagger 및 DB-adminer를 통한 직접 확인
 
 ## DB-adminer
