@@ -35,9 +35,10 @@ dependencies {
     // swagger추가
     implementation 'io.springfox:springfox-boot-starter:3.0.0'
     // Querydsl
-    implementation 'com.querydsl:querydsl-jpa'
+    implementation "com.querydsl:querydsl-jpa:${querydslVersion}"
+    implementation "com.querydsl:querydsl-apt:${querydslVersion}"
     // Querydsl JPAAnnotationProcessor 사용 지정
-    annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jpa"
+//    annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jpa"
     // java.lang.NoClassDefFoundError(javax.annotation.Entity) 발생 대응
     annotationProcessor "jakarta.persistence:jakarta.persistence-api"
     // java.lang.NoClassDefFoundError(javax.annotation.Generated) 발생 대응
@@ -45,17 +46,17 @@ dependencies {
 }
 
 //
-//def querydslDir = "$buildDir/generated/querydsl"
+def querydslDir = "$buildDir/generated/querydsl"
 
 querydsl {
-    library = "com.querydsl:querydsl-apt"
+//    library = "com.querydsl:querydsl-apt"
     jpa = true
-//    querydslSourcesDir = querydslDir
+    querydslSourcesDir = querydslDir
 }
 
-//sourceSets {
-//    main.java.srcDir querydslDir
-//}
+sourceSets {
+    main.java.srcDir querydslDir
+}
 
 compileQuerydsl{
     options.annotationProcessorPath = configurations.querydsl
