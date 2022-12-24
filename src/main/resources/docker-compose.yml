@@ -1,9 +1,5 @@
 version: '3'
 
-volumes:
-  mysql_data:
-
-
 services:
   database-mysql:
     container_name: database-mysql
@@ -18,7 +14,8 @@ services:
     ports:
       - '3306:3306'
     volumes:
-      - mysql_data:/var/lib/mysql
+      - ./data/schema.sql:/docker-entrypoint-initdb.d/data/schema.sql
+      - ./data/data.sql:/docker-entrypoint-initdb.d/data/data.sql
 
   database-adminer:
     container_name: database-adminer

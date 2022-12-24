@@ -36,4 +36,14 @@ POST /events
 요구사항을 바탕으로 ERD 작성(draw.io 사용)
 ![club-mileage](https://user-images.githubusercontent.com/30383018/208692388-a82622b7-b7fa-404b-8098-883f02ff2e4c.JPG)
 
+## 실행방법 및 실행 확인
+
+
+> Swagger 및 DB-adminer를 통한 직접 확인
+
+## DB-adminer
+http://localhost:18080/triple?server=database-mysql&username=lmc&db=triple
+
+## Swagger
+http://localhost:8080/swagger-ui/index.html#/
 
